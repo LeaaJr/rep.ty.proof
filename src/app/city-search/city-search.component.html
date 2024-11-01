@@ -1,0 +1,10 @@
+<div>
+  <h2>Componente de Búsqueda de Ciudad</h2>
+  <input [(ngModel)]="cityName" placeholder="Buscar ciudad" />
+  <button (click)="searchWeather()">Buscar Clima</button>
+
+  <div *ngIf="weatherData">
+    <h3>Clima en {{ cityName }}</h3>
+    <p>Temperatura: {{ weatherData.current_weather?.temperature }} °C</p>
+    <p>Velocidad del viento: {{ weatherData.current_weather?.windspeed }} m/s</p>
+  </div>
