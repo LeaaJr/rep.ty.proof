@@ -11,7 +11,7 @@ export class WeatherService {
   constructor(private http: HttpClient) {}
 
   getWeather(latitude: number, longitude: number): Observable<any> {
-    const url = `${this.apiUrl}?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
+    const url = `${this.apiUrl}?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,wind_speed_10m,relative_humidity_2m`;
     return this.http.get(url);
   }
 }
