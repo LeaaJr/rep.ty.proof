@@ -9,13 +9,20 @@
     <p>Temperatura: {{ currentTemperature }} °C</p>
     <p>Velocidad del viento: {{ currentWindSpeed }} m/s</p>
     <p>Humedad: {{ currentHumidity }} %</p>
+  
+    <h3>Tendencia de Temperatura (Próximas 24 horas)</h3>
+    <canvas baseChart
+            [data]="temperatureData"
+            [options]="chartOptions"
+            [type]="'line'">
+    </canvas>
   </div>
 
   <h3>Ciudades Favoritas</h3>
   <ul>
-    <li *ngFor="let city of favoriteCities">
-      {{ city }} 
-      <button (click)="removeFavoriteCity(city)">Eliminar</button> <!-- Botón para eliminar la ciudad -->
+    <li *ngFor="let favoriteCity of favoriteCities">
+      {{ favoriteCity.name }} - {{ favoriteCity.temperature }}°C
+      <button (click)="removeFavoriteCity(favoriteCity.name)">Eliminar</button>
     </li>
   </ul>
 </div>
