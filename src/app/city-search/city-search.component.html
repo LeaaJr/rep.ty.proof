@@ -1,4 +1,4 @@
-<<div>
+<div>
   <h2>Componente de Búsqueda de Ciudad</h2>
   <input [(ngModel)]="cityName" placeholder="Buscar ciudad" />
   <button (click)="searchWeather()">Buscar Clima</button>
@@ -13,6 +13,9 @@
 
   <h3>Ciudades Favoritas</h3>
   <ul>
-    <li *ngFor="let city of favoriteCities">{{ city }}</li>
+    <li *ngFor="let city of favoriteCities">
+      {{ city }} 
+      <button (click)="removeFavoriteCity(city)">Eliminar</button> <!-- Botón para eliminar la ciudad -->
+    </li>
   </ul>
 </div>
