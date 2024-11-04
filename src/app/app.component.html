@@ -1,8 +1,44 @@
-<div>
-  <h1>Bokaaaaaaaa </h1>
+<header>
+  <div
+    class="p-0 text-center bg-image d-flex justify-content-center align-items-center"
+    style="
+      background-image: url('https://cdn.pixabay.com/photo/2018/06/21/13/57/clouds-3488632_1280.jpg');
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    "
+  >
+    <!-- Solo el buscador dentro de la imagen -->
+    <app-city-search (weatherDataChange)="onWeatherDataChange($event)"> </app-city-search>
 
-  <p>app de prueba.</p>
-  
-  <app-city-search> </app-city-search>
-  
+    <!-- Máscara oscura para el efecto de fondo -->
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+      <div class="d-flex justify-content-center align-items-center h-100 cover">
+        <div class="text-white">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container mt-4">
+  <div *ngIf="weatherData">
+    <h3>Clima en {{ cityName }}</h3>
+    <p class="text-white font-weight-bold">Temperatura: {{ currentTemperature }} °C</p>
+    <p class="text-white font-weight-bold">Velocidad del viento: {{ currentWindSpeed }} m/s</p>
+    <p class="text-white font-weight-bold">Humedad: {{ currentHumidity }} %</p>
+  </div>
+
+  <h3>Tendencia de Temperatura (Próximas 24 horas)</h3>
+  <canvas baseChart
+          #chart
+          [datasets]="temperatureData.datasets"
+          [labels]="temperatureData.labels"
+          [options]="chartOptions"
+          [legend]="true"
+          [type]="'line'">
+  </canvas>
 </div>
+
+

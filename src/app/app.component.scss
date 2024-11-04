@@ -1,0 +1,55 @@
+:host {
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding-top: 3rem;
+  }
+  
+
+p {
+    color: rgb(11, 11, 11); /* Cambia el color del texto a blanco */
+    font-weight: bold; /* Aumenta el grosor del texto */
+    margin: 5px 5; /* Margen superior e inferior para separar */
+    display: inline; /* Para que los elementos aparezcan en línea */
+    margin-right: 70px; /* Espacio entre las etiquetas */
+  }
+
+  weather-container {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+  }
+
+  weather-container p {
+    margin: 5px 0;
+  }
+/* Canvas del gráfico */
+canvas {
+    width: 100% !important;
+    max-width: 500px;
+    margin-top: 15px;
+  }
+  
+  .container {
+    width: 100%; /* Asegúrate de que el contenedor tenga un ancho del 100% */
+    display: flex; /* Usa flexbox para alinear los elementos */
+    flex-direction: column; /* Coloca los elementos en una columna */
+    align-items: flex-start; /* Alinea los elementos al inicio (izquierda) */
+    padding: 20px; /* Espacio interno alrededor del contenedor */
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 10px; /* Espacio entre los botones */
+    margin-top: 10px; /* Espacio superior */
+  }
+  
+  .search-input {
+    width: 100%; /* Asegúrate de que la barra de búsqueda ocupe el 100% */
+    border-radius: 8px; /* Borde redondeado */
+    padding: 10px; /* Espacio interno */
+  }

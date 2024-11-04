@@ -5,6 +5,8 @@ import { CitySearchComponent } from './city-search/city-search.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BaseChartDirective } from 'ng2-charts';
+import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
+
 
 
 @NgModule({
@@ -15,6 +17,7 @@ import { BaseChartDirective } from 'ng2-charts';
   imports: [
     BrowserModule,
     FormsModule,
+    MdbCollapseModule,
     HttpClientModule,
     BaseChartDirective
   ],

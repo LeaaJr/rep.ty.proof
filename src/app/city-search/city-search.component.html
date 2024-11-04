@@ -1,28 +1,19 @@
 <div>
-  <h2>Componente de Búsqueda de Ciudad</h2>
-  <input [(ngModel)]="cityName" placeholder="Buscar ciudad" />
-  <button (click)="searchWeather()">Buscar Clima</button>
-  <button (click)="saveFavoriteCity()">Guardar como Favorita</button>
+  <input [(ngModel)]="cityName" placeholder="Buscar ciudad" class="search-input" />
 
-  <div *ngIf="weatherData">
-    <h3>Clima en {{ cityName }}</h3>
-    <p>Temperatura: {{ currentTemperature }} °C</p>
-    <p>Velocidad del viento: {{ currentWindSpeed }} m/s</p>
-    <p>Humedad: {{ currentHumidity }} %</p>
-  
-    <h3>Tendencia de Temperatura (Próximas 24 horas)</h3>
-    <canvas baseChart
-            [data]="temperatureData"
-            [options]="chartOptions"
-            [type]="'line'">
-    </canvas>
+  <div class="button-container">
+    <button (click)="searchWeather()" class="btn btn-primary">Buscar Clima</button>
+    <button (click)="saveFavoriteCity()" class="btn btn-secondary">
+      <i class="fas fa-star"></i> Guardar como Favorita
+    </button>
   </div>
 
   <h3>Ciudades Favoritas</h3>
   <ul>
-    <li *ngFor="let favoriteCity of favoriteCities">
-      {{ favoriteCity.name }} - {{ favoriteCity.temperature }}°C
-      <button (click)="removeFavoriteCity(favoriteCity.name)">Eliminar</button>
+    <li *ngFor="let city of favoriteCities">
+      {{ city.name }} - {{ city.temperature }} °C
+      <button (click)="removeFavoriteCity(city.name)">Eliminar</button>
     </li>
   </ul>
 </div>
+

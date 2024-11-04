@@ -1,5 +1,73 @@
-.canvas {
-    display: block;
-    width: 100% !important; // O establece un ancho específico
-    height: 400px; // Establecer una altura adecuada
-  }
+/* Estilos generales */
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  padding-top: 3rem;
+}
+
+
+/* Encabezados */
+h2, h3 {
+  color: #060709;
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* Inputs y botones */
+input {
+  width: 100%; /* O cambiar a un valor específico como 80% */
+  max-width: 400px; /* Establece un ancho máximo */
+  border-radius: 20px; /* Borde redondeado */
+  border: 1px solid #ccc; /* Borde suave */
+  padding: 10px; /* Espaciado interno */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin-bottom: 10px; /* Margen inferior */
+}
+
+button {
+  display: inline-block; /* Para alinear los botones */
+  margin-top: 10px; /* Espacio entre los botones */
+  margin-right: 5px; /* Espacio entre los botones */
+  border-radius: 5px; /* Borde redondeado */
+  padding: 10px 20px; /* Espaciado interno */
+}
+
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* Lista de ciudades favoritas */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 500px;
+}
+
+li {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li button {
+  background-color: #dc3545;
+}
+
+li button:hover {
+  background-color: #c82333;
+}
+
