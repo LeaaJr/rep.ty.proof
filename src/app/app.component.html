@@ -13,32 +13,34 @@
     <app-city-search (weatherDataChange)="onWeatherDataChange($event)"> </app-city-search>
 
     <!-- Máscara oscura para el efecto de fondo -->
-    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+    <div class="mask">
       <div class="d-flex justify-content-center align-items-center h-100 cover">
         <div class="text-white">
+          <!-- Puedes agregar más contenido aquí si es necesario -->
         </div>
       </div>
     </div>
   </div>
 </header>
 
-<div class="container mt-4">
-  <div *ngIf="weatherData">
+<!-- Div azul que se coloca entre la imagen y el resto del contenido -->
+<div style="background: linear-gradient(7deg, rgba(27,107,201,1) 15%, rgba(16,105,227,0.15738795518207283) 84%); padding: 20px;">
+  <div class="weather-card text-white">
     <h3>Clima en {{ cityName }}</h3>
-    <p class="text-white font-weight-bold">Temperatura: {{ currentTemperature }} °C</p>
-    <p class="text-white font-weight-bold">Velocidad del viento: {{ currentWindSpeed }} m/s</p>
-    <p class="text-white font-weight-bold">Humedad: {{ currentHumidity }} %</p>
+    <div class="weather-info">
+      <p class="font-weight-bold">🌡️ Temperatura: {{ currentTemperature }} °C</p>
+      <p class="font-weight-bold">💨 Velocidad del viento: {{ currentWindSpeed }} m/s</p>
+      <p class="font-weight-bold">💧 Humedad: {{ currentHumidity }} %</p>
+    </div>
+
+    <h3>Tendencia de Temperatura (Próximas 24 horas)</h3>
+    <canvas baseChart
+            #chart
+            [datasets]="temperatureData.datasets"
+            [labels]="temperatureData.labels"
+            [options]="chartOptions"
+            [legend]="true"
+            [type]="'line'">
+    </canvas>
   </div>
-
-  <h3>Tendencia de Temperatura (Próximas 24 horas)</h3>
-  <canvas baseChart
-          #chart
-          [datasets]="temperatureData.datasets"
-          [labels]="temperatureData.labels"
-          [options]="chartOptions"
-          [legend]="true"
-          [type]="'line'">
-  </canvas>
 </div>
-
-

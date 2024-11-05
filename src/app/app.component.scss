@@ -1,55 +1,74 @@
-:host {
-    align-items: center;
-    font-family: Arial, sans-serif;
-    color: #333;
-    padding-top: 3rem;
-  }
-  
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-p {
-    color: rgb(11, 11, 11); /* Cambia el color del texto a blanco */
-    font-weight: bold; /* Aumenta el grosor del texto */
-    margin: 5px 5; /* Margen superior e inferior para separar */
-    display: inline; /* Para que los elementos aparezcan en línea */
-    margin-right: 70px; /* Espacio entre las etiquetas */
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  weather-container {
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    padding: 20px;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 500px;
-    margin-top: 20px;
-  }
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  color: #fcf6f6;
+  min-height: 100vh;
+  background: linear-gradient(137deg, rgba(9, 13, 42, 1) 8%, rgba(6, 48, 106, 1) 84%); /* Aplica el fondo que desees */
+}
 
-  weather-container p {
-    margin: 5px 0;
-  }
-/* Canvas del gráfico */
+.blue-separator {
+  width: 100%;
+  height: 50px; /* Ajusta la altura a tu preferencia */
+  background-color: rgba(162, 194, 255, 1); /* Color azul que pediste */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los elementos dentro del contenedor */
+  width: 100%;
+  padding: 20px;
+}
+
+.weather-card {
+  background: rgba(0, 0, 0, 0.8); /* Fondo semitransparente para la tarjeta */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+  color: white; /* Color del texto */
+  width: 100%;
+  max-width: 600px; /* Ajusta a tu preferencia */
+  margin: 20px auto; /* Espacio superior e inferior entre las cards */
+}
+
+.weather-info {
+  display: flex;
+  justify-content: space-between; /* Espacio entre los elementos */
+  flex-direction: row; /* Cambia a fila para que se muestre horizontalmente */
+  align-items: center; /* Alinea los elementos verticalmente al centro */
+  margin-bottom: 20px; /* Añadir espacio por debajo del clima */
+}
+
 canvas {
-    width: 100% !important;
-    max-width: 500px;
-    margin-top: 15px;
-  }
-  
-  .container {
-    width: 100%; /* Asegúrate de que el contenedor tenga un ancho del 100% */
-    display: flex; /* Usa flexbox para alinear los elementos */
-    flex-direction: column; /* Coloca los elementos en una columna */
-    align-items: flex-start; /* Alinea los elementos al inicio (izquierda) */
-    padding: 20px; /* Espacio interno alrededor del contenedor */
-  }
-  
-  .button-container {
-    display: flex;
-    gap: 10px; /* Espacio entre los botones */
-    margin-top: 10px; /* Espacio superior */
-  }
-  
-  .search-input {
-    width: 100%; /* Asegúrate de que la barra de búsqueda ocupe el 100% */
-    border-radius: 8px; /* Borde redondeado */
-    padding: 10px; /* Espacio interno */
-  }
+  width: 100% !important;
+  height: 300px !important; /* Ajusta la altura para que sea más grande */
+}
+
+/* Estilos de encabezados */
+h2, h3 {
+  color: #fcf6f6; /* Color blanco para los encabezados */
+  margin: 20px 0; /* Aumenta el espacio superior e inferior */
+  text-align: center; /* Alinea los encabezados al centro */
+}
+
+.bg-image {
+  width: 100%; /* Asegúrate de que ocupe el 100% del ancho */
+  height: 400px; /* Mantén la altura como desees */
+  background-size: cover; /* Esto asegura que la imagen cubra todo el espacio */
+  background-position: center; /* Alinea la imagen al centro */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+}

@@ -147,3 +147,5 @@ export class CitySearchComponent {
     localStorage.setItem('favoriteCities', JSON.stringify(this.favoriteCities));
   }
 }
+
+

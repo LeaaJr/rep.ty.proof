@@ -4,16 +4,17 @@
   <div class="button-container">
     <button (click)="searchWeather()" class="btn btn-primary">Buscar Clima</button>
     <button (click)="saveFavoriteCity()" class="btn btn-secondary">
-      <i class="fas fa-star"></i> Guardar como Favorita
+      <i class="fas fa-star"></i> Agregar a Favoritos
     </button>
   </div>
 
   <h3>Ciudades Favoritas</h3>
-  <ul>
-    <li *ngFor="let city of favoriteCities">
-      {{ city.name }} - {{ city.temperature }} °C
-      <button (click)="removeFavoriteCity(city.name)">Eliminar</button>
-    </li>
-  </ul>
-</div>
-
+  <div class="favorites-container d-flex flex-wrap"> <!-- Asegúrate de que el contenedor use flexbox -->
+    <ng-container *ngFor="let city of favoriteCities; let i = index">
+      <div class="weather-card d-flex justify-content-between align-items-center" *ngIf="i < 5"> 
+        <div>
+          <i class="fas fa-star" style="color: gold;"></i> 
+          {{ city.name }} - {{ city.temperature }} °C
+        </div>
+        <button (click)="removeFavoriteCity(city.name)" class="btn btn-danger btn-sm"> 
+          <i class="fas fa-trash"></i>

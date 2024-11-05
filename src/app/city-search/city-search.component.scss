@@ -1,73 +1,69 @@
 /* Estilos generales */
-:host {
+.search-input {
+  max-width: 300px; // Ajusta el tamaño según sea necesario
+  margin: 0 auto; // Centra el input
+}
+
+.button-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  color: #333;
-  padding-top: 3rem;
+  justify-content: center; // Centra los botones
+  gap: 10px; // Espacio entre los botones
 }
 
-
-/* Encabezados */
-h2, h3 {
-  color: #060709;
-  margin: 10px 0;
-  text-align: center;
+// Estilo para la lista de ciudades favoritas
+.list-group-item {
+  display: flex;
+  justify-content: space-between; // Alinea el texto y el botón de eliminar
+  align-items: center; // Centra verticalmente
 }
 
-/* Inputs y botones */
-input {
-  width: 100%; /* O cambiar a un valor específico como 80% */
-  max-width: 400px; /* Establece un ancho máximo */
-  border-radius: 20px; /* Borde redondeado */
-  border: 1px solid #ccc; /* Borde suave */
-  padding: 10px; /* Espaciado interno */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  margin-bottom: 10px; /* Margen inferior */
+.search-container {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: flex-start; /* Alinea a la izquierda para que la lista de favoritos quede a la derecha */
 }
 
-button {
-  display: inline-block; /* Para alinear los botones */
-  margin-top: 10px; /* Espacio entre los botones */
-  margin-right: 5px; /* Espacio entre los botones */
-  border-radius: 5px; /* Borde redondeado */
-  padding: 10px 20px; /* Espaciado interno */
+.button-container {
+  margin-top: 10px; /* Espacio entre el input y los botones */
 }
 
-
-button:hover {
-  background-color: #0056b3;
+.favorites-container {
+  display: flex; /* Alinea en horizontal */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en caso de que no quepan en una sola línea */
+  gap: 10px; /* Espacio entre las cards */
 }
 
+.weather-card {
+  display: flex; /* Alinea el contenido horizontalmente */
+  justify-content: space-between; /* Espacio entre el nombre de la ciudad y el botón */
+  align-items: center; /* Centra verticalmente los elementos */
+  padding: 10px; /* Espacio interno para las cards */
+}
 
-
-/* Lista de ciudades favoritas */
 ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 20px 0;
-  width: 100%;
-  max-width: 500px;
+  list-style-type: none; /* Elimina el estilo de lista */
+  padding: 0; /* Elimina padding por defecto */
+  display: flex; /* Usa flex para la lista */
 }
 
 li {
-  background-color: #e9ecef;
-  border: 1px solid #ced4da;
-  padding: 10px;
-  margin-bottom: 5px;
-  border-radius: 4px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex; /* Para alinear el texto y el botón de eliminar en la misma línea */
+  margin-right: 20px; /* Espacio entre las ciudades */
 }
 
-li button {
-  background-color: #dc3545;
+button {
+  margin-left: 10px; /* Espacio entre el nombre de la ciudad y el botón de eliminar */
 }
 
-li button:hover {
-  background-color: #c82333;
+/* Limitar el número de ciudades a 5 */
+li:nth-child(n+6) {
+  display: none; /* Oculta elementos adicionales si hay más de 5 */
 }
 
+.btn-danger {
+  transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+.btn-danger:hover {
+  color: red; /* Cambia el color a rojo al hacer hover */
+}
