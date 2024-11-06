@@ -25,6 +25,14 @@ export class AppComponent {
     ]
   };
 
+  favoriteCities: any[] = []; // Agregamos la propiedad para las ciudades favoritas
+
+  // Método para eliminar una ciudad favorita
+  removeFavoriteCity(cityName: string) {
+    this.favoriteCities = this.favoriteCities.filter(city => city.name !== cityName);
+  }
+
+  // Maneja los cambios en los datos del clima
   onWeatherDataChange(data: any) {
     this.weatherData = data;
     this.currentHumidity = data.hourly.relative_humidity_2m[0];
@@ -36,6 +44,7 @@ export class AppComponent {
     this.temperatureData.labels = Array.from({ length: 24 }, (_, i) => `${i + 1}h`); // Etiquetas para las horas
   }
 
+  // Opciones para la gráfica
   chartOptions = {
     responsive: true,
     scales: {
@@ -65,6 +74,7 @@ export class AppComponent {
       }
     }
   };
-  
-  
 }
+
+
+

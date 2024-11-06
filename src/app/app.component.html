@@ -9,31 +9,38 @@
       background-repeat: no-repeat;
     "
   >
-    <!-- Solo el buscador dentro de la imagen -->
     <app-city-search (weatherDataChange)="onWeatherDataChange($event)"> </app-city-search>
 
     <!-- Máscara oscura para el efecto de fondo -->
+
     <div class="mask">
       <div class="d-flex justify-content-center align-items-center h-100 cover">
         <div class="text-white">
-          <!-- Puedes agregar más contenido aquí si es necesario -->
         </div>
       </div>
     </div>
   </div>
 </header>
 
-<!-- Div azul que se coloca entre la imagen y el resto del contenido -->
 <div style="background: linear-gradient(7deg, rgba(27,107,201,1) 15%, rgba(16,105,227,0.15738795518207283) 84%); padding: 20px;">
+
+  <!-- Tarjeta de clima -->
+
   <div class="weather-card text-white">
-    <h3>Clima en {{ cityName }}</h3>
+    <h3>Clima: {{ cityName }}</h3>
     <div class="weather-info">
-      <p class="font-weight-bold">🌡️ Temperatura: {{ currentTemperature }} °C</p>
-      <p class="font-weight-bold">💨 Velocidad del viento: {{ currentWindSpeed }} m/s</p>
-      <p class="font-weight-bold">💧 Humedad: {{ currentHumidity }} %</p>
+      <div>
+        <p>🌡️ Temperatura: <span>{{ currentTemperature }} °C</span></p>
+      </div>
+      <div>
+        <p>💨 Vento: <span>{{ currentWindSpeed }} m/s</span></p>
+      </div>
+      <div>
+        <p>💧 Umidità: <span>{{ currentHumidity }} %</span></p>
+      </div>
     </div>
 
-    <h3>Tendencia de Temperatura (Próximas 24 horas)</h3>
+    <h3 class="temperature-trend-title">Andamento della temperatura (prossime 24 ore)</h3>
     <canvas baseChart
             #chart
             [datasets]="temperatureData.datasets"
@@ -43,4 +50,11 @@
             [type]="'line'">
     </canvas>
   </div>
+
+  <footer class="footer">
+    <p>Seguimi su:</p>
+    <a href="https://www.hackerrank.com/profile/leeitooocabj" target="_blank"><i class="fa-brands fa-hackerrank"></i> Hackerrank</a>
+    <a href="https://www.linkedin.com/in/leandro-moyano199712/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="https://github.com/LeaaJr" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </footer>
 </div>

@@ -1,69 +1,96 @@
-/* Estilos generales */
+// Estilo para el input de búsqueda
 .search-input {
-  max-width: 300px; // Ajusta el tamaño según sea necesario
-  margin: 0 auto; // Centra el input
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 40px 10px 10px; /* Ajuste de padding para dejar espacio a la derecha del input */
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+  position: relative; /* Necesario para posicionar el botón dentro del input */
+
+  text-align: center; /* Centra el texto dentro del input */
+
+  /* El ícono de búsqueda (si lo deseas) se puede colocar dentro del input */
+  &::placeholder {
+    text-align: center; /* Centra el texto del placeholder */
+  }
 }
 
+/* Estilos cuando el input está en foco */
+.search-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+// Contenedor para los botones de búsqueda y favoritos
 .button-container {
   display: flex;
-  justify-content: center; // Centra los botones
-  gap: 10px; // Espacio entre los botones
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-// Estilo para la lista de ciudades favoritas
-.list-group-item {
-  display: flex;
-  justify-content: space-between; // Alinea el texto y el botón de eliminar
-  align-items: center; // Centra verticalmente
+// Contenedor general de ciudades favoritas, ubicado en la parte inferior del header
+// Contenedor general del header
+.header-content {
+  position: relative;
+  height: 400px; // Asegura una altura específica para el header
+  overflow: hidden;
 }
 
-.search-container {
-  display: flex;
-  flex-direction: column; /* Coloca los elementos en columna */
-  align-items: flex-start; /* Alinea a la izquierda para que la lista de favoritos quede a la derecha */
-}
-
-.button-container {
-  margin-top: 10px; /* Espacio entre el input y los botones */
-}
-
+// Contenedor de ciudades favoritas, ubicado en la parte inferior del header
 .favorites-container {
-  display: flex; /* Alinea en horizontal */
-  flex-wrap: wrap; /* Permite que los elementos se envuelvan en caso de que no quepan en una sola línea */
-  gap: 10px; /* Espacio entre las cards */
+  display: flex;
+  flex-wrap: nowrap; /* Asegura que las tarjetas estén en una fila horizontal */
+  justify-content: flex-start; /* Alinea las tarjetas al inicio */
+  gap: 10px;
+  overflow-x: auto; /* Permite desplazamiento horizontal si las tarjetas se desbordan */
+  padding: 10px;
 }
 
-.weather-card {
-  display: flex; /* Alinea el contenido horizontalmente */
-  justify-content: space-between; /* Espacio entre el nombre de la ciudad y el botón */
-  align-items: center; /* Centra verticalmente los elementos */
-  padding: 10px; /* Espacio interno para las cards */
+// Tarjeta individual para cada ciudad favorita
+.city-card {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 180px;
+  margin: 5px;
 }
 
-ul {
-  list-style-type: none; /* Elimina el estilo de lista */
-  padding: 0; /* Elimina padding por defecto */
-  display: flex; /* Usa flex para la lista */
+// Asegúrate de que el contenedor tenga suficiente espacio en la parte superior e inferior
+.favorite-cities-container {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow-x: auto; /* Agregar desplazamiento horizontal si hay muchas tarjetas */
 }
 
-li {
-  display: flex; /* Para alinear el texto y el botón de eliminar en la misma línea */
-  margin-right: 20px; /* Espacio entre las ciudades */
+// Icono y nombre de la ciudad en la tarjeta
+.city-info {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
 }
 
-button {
-  margin-left: 10px; /* Espacio entre el nombre de la ciudad y el botón de eliminar */
+// Botón de eliminar con icono de basura
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 8px;
+  transition: color 0.3s;
 }
 
-/* Limitar el número de ciudades a 5 */
-li:nth-child(n+6) {
-  display: none; /* Oculta elementos adicionales si hay más de 5 */
-}
-
-.btn-danger {
-  transition: color 0.3s ease; /* Transición suave para el color */
-}
-
-.btn-danger:hover {
-  color: red; /* Cambia el color a rojo al hacer hover */
+h4 {
+color: rgb(209, 205, 199);
 }

@@ -99,13 +99,13 @@ export class CitySearchComponent {
                 // Llamar a la función para actualizar el gráfico con datos de las próximas 24 horas
                 this.updateTemperatureTrend(weatherData.hourly.temperature_2m);
             }, error => {
-                console.error('Error al obtener datos del clima:', error);
+                console.error('Errore durante il recupero dei dati meteo:', error);
             });
         } else {
-            console.error('No se encontraron coordenadas para la ciudad:', this.cityName);
+            console.error('Nessuna coordinata trovata per la città:', this.cityName);
         }
     }, error => {
-        console.error('Error al obtener coordenadas:', error);
+        console.error('Errore durante il recupero delle coordinate:', error);
     });
 }
 
@@ -121,20 +121,25 @@ export class CitySearchComponent {
   loadFavoriteCities() {
     const storedCities = localStorage.getItem('favoriteCities');
     if (storedCities) {
-      this.favoriteCities = JSON.parse(storedCities);
+      this.favoriteCities = JSON.parse(storedCities); // Cargar las ciudades favoritas
     }
   }
+  
 
   saveFavoriteCity() {
     if (this.cityName && !this.favoriteCities.some(city => city.name === this.cityName)) {
-      const favoriteCity = {
-        name: this.cityName,
-        temperature: this.currentTemperature
-      };
-      this.favoriteCities.push(favoriteCity);
-      this.sortFavoriteCitiesByTemperature();
-      localStorage.setItem('favoriteCities', JSON.stringify(this.favoriteCities));
-      this.chart?.update();
+      if (this.favoriteCities.length < 6) {
+        const favoriteCity = {
+          name: this.cityName,
+          temperature: this.currentTemperature
+        };
+        this.favoriteCities.push(favoriteCity);
+        this.sortFavoriteCitiesByTemperature();
+        localStorage.setItem('favoriteCities', JSON.stringify(this.favoriteCities));
+        this.chart?.update();
+      } else {
+        alert('Hai già aggiunto il massimo di 6 città preferite.');
+      }
     }
   }
   
