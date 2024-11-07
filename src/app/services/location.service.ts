@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LocationService {
-  private apiUrl = 'https://nominatim.openstreetmap.org/search'; // URL de la API de Nominatim
+  private apiUrl = 'https://nominatim.openstreetmap.org/search';
 
   constructor(private http: HttpClient) {}
 

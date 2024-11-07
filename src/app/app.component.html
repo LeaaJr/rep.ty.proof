@@ -2,7 +2,9 @@
   <div
     class="p-0 text-center bg-image d-flex justify-content-center align-items-center"
     style="
-      background-image: url('https://cdn.pixabay.com/photo/2018/06/21/13/57/clouds-3488632_1280.jpg');
+      background-image:
+      linear-gradient(to bottom, transparent, #d9e9f6),
+      url('https://images.unsplash.com/photo-1518277748204-ba05cb84d9f5?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
       height: 400px;
       background-size: cover;
       background-position: center;
@@ -10,9 +12,6 @@
     "
   >
     <app-city-search (weatherDataChange)="onWeatherDataChange($event)"> </app-city-search>
-
-    <!-- Máscara oscura para el efecto de fondo -->
-
     <div class="mask">
       <div class="d-flex justify-content-center align-items-center h-100 cover">
         <div class="text-white">
@@ -22,10 +21,7 @@
   </div>
 </header>
 
-<div style="background: linear-gradient(7deg, rgba(27,107,201,1) 15%, rgba(16,105,227,0.15738795518207283) 84%); padding: 20px;">
-
-  <!-- Tarjeta de clima -->
-
+<div style="background: linear-gradient(0deg, rgb(11 36 65) 15%, rgba(16, 105, 227, 0.15738795518207283) 84%); padding: 20px;">
   <div class="weather-card text-white">
     <h3>Clima: {{ cityName }}</h3>
     <div class="weather-info">

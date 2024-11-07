@@ -2,19 +2,15 @@
   <input [(ngModel)]="cityName" placeholder="Cerca città..." class="search-input" />
 
   <div class="button-container">
-    <button (click)="searchWeather()" class="btn btn-primary">Cerca meteo</button>
+    <button (click)="searchWeather()" class="btn btn-primary">Cerca Meteo</button>
     <button (click)="saveFavoriteCity()" class="btn btn-primary">
       <i class="fas fa-star"></i> Preferiti
     </button>
   </div>
 
-  <!-- Contenedor para las ciudades favoritas -->
   <div class="favorites-card-container mt-3">
-    <h4>città preferite</h4>
-
-    <!-- Contenedor de las ciudades favoritas -->
+    <h4>Città Preferite</h4>
     <div class="favorite-cities-container d-flex flex-wrap">
-      <!-- Recorre las ciudades favoritas con *ngFor -->
       <div *ngFor="let city of favoriteCities" class="city-card">
         <div class="city-info">
           <i class="fas fa-star" style="color: gold;"></i>

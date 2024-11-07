@@ -1,27 +1,27 @@
-// Estilo para el input de búsqueda
+// Estilo para el input
 .search-input {
   width: 100%;
   max-width: 400px;
-  padding: 10px 40px 10px 10px; /* Ajuste de padding para dejar espacio a la derecha del input */
+  padding: 10px 40px 10px 10px;
   border: 1px solid #ccc;
   border-radius: 20px;
   font-size: 16px;
   outline: none;
   transition: border-color 0.3s;
-  position: relative; /* Necesario para posicionar el botón dentro del input */
+  position: relative;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  text-align: center; 
 
-  text-align: center; /* Centra el texto dentro del input */
 
-  /* El ícono de búsqueda (si lo deseas) se puede colocar dentro del input */
   &::placeholder {
-    text-align: center; /* Centra el texto del placeholder */
+    text-align: center;
   }
 }
 
-/* Estilos cuando el input está en foco */
+
 .search-input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 5px rgb(2, 119, 243);
 }
 
 // Contenedor para los botones de búsqueda y favoritos
@@ -32,28 +32,27 @@
   margin-top: 10px;
 }
 
-// Contenedor general de ciudades favoritas, ubicado en la parte inferior del header
 // Contenedor general del header
 .header-content {
   position: relative;
-  height: 400px; // Asegura una altura específica para el header
+  height: 400px;
   overflow: hidden;
 }
 
 // Contenedor de ciudades favoritas, ubicado en la parte inferior del header
 .favorites-container {
   display: flex;
-  flex-wrap: nowrap; /* Asegura que las tarjetas estén en una fila horizontal */
-  justify-content: flex-start; /* Alinea las tarjetas al inicio */
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   gap: 10px;
-  overflow-x: auto; /* Permite desplazamiento horizontal si las tarjetas se desbordan */
+  overflow-x: auto;
   padding: 10px;
 }
 
-// Tarjeta individual para cada ciudad favorita
+
 .city-card {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
+  background-color: transparent;
+  color: black;
   padding: 10px 15px;
   border-radius: 8px;
   display: flex;
@@ -63,17 +62,17 @@
   margin: 5px;
 }
 
-// Asegúrate de que el contenedor tenga suficiente espacio en la parte superior e inferior
+
 .favorite-cities-container {
   padding: 10px;
   display: flex;
   justify-content: flex-start;
   flex-wrap: nowrap;
   gap: 10px;
-  overflow-x: auto; /* Agregar desplazamiento horizontal si hay muchas tarjetas */
+  overflow-x: auto;
 }
 
-// Icono y nombre de la ciudad en la tarjeta
+
 .city-info {
   display: flex;
   align-items: center;
@@ -91,6 +90,10 @@
   transition: color 0.3s;
 }
 
+.remove-btn:hover{
+  color: red;
+}
+
 h4 {
-color: rgb(209, 205, 199);
+color: white;
 }
